@@ -6,6 +6,8 @@ const cors = require('cors')
 
 const app = express();
 
+console.log("🔹 DB_URI:", process.env.DB_URI); 
+console.log('API KEY cargada:', process.env.BREVO_API_KEY);
 
 //Connect to database
 require('./config/connect-db')

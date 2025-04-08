@@ -87,8 +87,12 @@ exports.sendVerifyCode = async (mail, resetCode) => {
     console.log('Email enviado correctamente. ID:', data.messageId);
     return data;
   } catch (error) {
-    console.error('Error al enviar email:', error);
-    throw new Error('Error al enviar el correo de verificación');
+    if (error.response && error.response.body) {
+      console.error('Detalles del error de Brevo:', error.response.body);
+    } else {
+      console.error('Error desconocido al enviar email:', error);
+    }
+    throw new Error('Error al enviar el correo de verificación');  
   }
 };
 
