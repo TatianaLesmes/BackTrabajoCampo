@@ -1,7 +1,6 @@
 const User = require('../models/user');
 const { verifyToken } = require('../helpers/gerate-token');
 
-
 module.exports = {
 
   // Controlador para crear un nuevo usuario
@@ -114,4 +113,6 @@ getUserProfile: async (req, res) => {
       res.status(500).send(err);
     }
   }
+
+
 };
