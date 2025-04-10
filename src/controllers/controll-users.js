@@ -20,8 +20,6 @@ module.exports = {
         return res.status(400).json({ error: 'El número de documento ya está registrado' });
       }
 
-
-
       // Verificar si la fecha de nacimiento es mayor a la fecha actual
       const currentDate = new Date();
       if (new Date(birthdate) > currentDate) {
@@ -36,8 +34,8 @@ module.exports = {
         name,
         lastName,
         birthdate,
-        documentNumber,
         typeDocument,
+        documentNumber,
         mail,
         password,  // Guardamos la contraseña hasheada
         role: userRole
